@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>left</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/chili-1.7.pack.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/jquery.dimensions.js"></script>
+<script type="text/javascript" src="../js/jquery.accordion.js"></script>
+<script language="javascript">
+	jQuery().ready(function(){
+		jQuery('#navigation').accordion({
+			header: '.head',
+			navigation1: true, 
+			event: 'click',
+			fillSpace: true,
+			animated: 'bounceslide'
+		});
+	});
+</script>
+<style type="text/css">
+<!--
+body {
+	margin:0px;
+	padding:0px;
+	font-size: 12px;
+}
+#navigation {
+	margin:0px;
+	padding:0px;
+	width:147px;
+}
+#navigation a.head {
+	cursor:pointer;
+	background:url(../images/main_34.gif) no-repeat scroll;
+	display:block;
+	font-weight:bold;
+	margin:0px;
+	padding:5px 0 5px;
+	text-align:center;
+	font-size:12px;
+	text-decoration:none;
+}
+#navigation ul {
+	border-width:0px;
+	margin:0px;
+	padding:0px;
+	text-indent:0px;
+}
+#navigation li {
+	list-style:none; display:inline;
+}
+#navigation li li a {
+	display:block;
+	font-size:12px;
+	text-decoration: none;
+	text-align:center;
+	padding:3px;
+}
+#navigation li li a:hover {
+	background:url(../images/tab_bg.gif) repeat-x;
+		border:solid 1px #adb9c2;
+}
+#navigation li li a:link {
+    color:#3D4A50;
+    }
+#navigation li li a:visited {
+    color:#436B92;
+    }
+-->
+</style>
+</head>
+<body>
+<div  style="height:100%;">
+  <ul id="navigation">
+    <li> <a class="head">系统管理</a>
+      <ul>
+        <li><a href="userManage/StaffSearch" target="rightFrame">用户管理</a></li>
+        <li><a href="privilegeManage/GetInfoForChangePrivilege" target="rightFrame">权限管理</a></li>
+        <li><a href="deptManage/AllDept?path=deptSearch.jsp" target="rightFrame">组织机构管理</a></li>
+        <li><a href="changePwd/changePwd.jsp" target="rightFrame">密码修改</a></li>
+        <li><a href="#" onClick="return logout()">退出系统</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">设备管理</a>
+      <ul>
+        <li><a href="type/GetAllType" target="rightFrame">设备类型</a></li>
+        <li><a href="project/AllProject" target="rightFrame">巡检项目</a></li>
+        <li><a href="equipmentResume/AllEquipment?typecode=all" target="rightFrame">设备履历</a></li>
+        <li><a href="problem/AllProblem" target="rightFrame">故障报告</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">巡检管理</a>
+      <ul>
+        <li><a href="plan/GetProject" target="rightFrame">巡检计划</a></li>
+        <li><a href="control/AllPlanToday" target="rightFrame">巡检监控</a></li>
+        <li><a href="search/PlanSearch" target="rightFrame">巡检计划查看</a></li>
+        <li><a href="result/SearchResult" target="rightFrame">巡检结果查看</a></li>
+      </ul>
+    </li>
+    <li><a class="head">统计分析</a>
+      <ul>
+        <li><a href="month/ProjectForMonth" target="rightFrame">月报表</a></li>
+        <li><a href="week/ProjectForWeek" target="rightFrame">周报表</a></li>
+         <li><a href="enterprise/EnterpriseCompare" target="rightFrame">厂商对比</a></li>
+         <li><a href="typeProblem/TypeProblem" target="rightFrame">设备故障分析</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+<script language=JavaScript>
+function logout(){
+	if (confirm("您确定要退出到主页吗？"))
+		top.location = "../index.jsp";
+	return false;
+}
+</script>
+</html>
